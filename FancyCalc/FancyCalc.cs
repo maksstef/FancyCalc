@@ -35,19 +35,23 @@ namespace FancyCalc
             double n1 = 0;
             double n2 = 0;
 
-            string[] strarr = expression.Split();
-            string znak;
-            if (strarr[1] == " ")
+            char[] strarr = expression.ToCharArray();
+            foreach (var i in strarr)
             {
-                n1 = Double.Parse(strarr[0]);
-                n2 = Double.Parse(strarr[4]);
-                znak = strarr[2];
+                Console.WriteLine(i);
+            }
+            string znak;
+            if (strarr[1] == ' ')
+            {
+                n1 = Double.Parse(strarr[0].ToString());
+                n2 = Double.Parse(strarr[4].ToString());
+                znak = strarr[2].ToString();
             }
             else
             {
-                n1 = Double.Parse(strarr[0]);
-                n2 = Double.Parse(strarr[2]);
-                znak = strarr[1];
+                n1 = Double.Parse(strarr[0].ToString());
+                n2 = Double.Parse(strarr[2].ToString());
+                znak = strarr[1].ToString();
             }
 
             if (znak == "+")
