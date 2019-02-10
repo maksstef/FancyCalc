@@ -47,11 +47,27 @@ namespace FancyCalc
                 n2 = Double.Parse(strarr[4].ToString());
                 znak = strarr[2].ToString();
             }
-            else
+            else if (strarr[1].ToString() == "+" || strarr[1].ToString() == "-" || strarr[1].ToString() == "*")
             {
                 n1 = Double.Parse(strarr[0].ToString());
                 n2 = Double.Parse(strarr[2].ToString());
                 znak = strarr[1].ToString();
+            }
+            else if (strarr[3].ToString() == "9")
+            {
+                n1 = 10;
+                n2 = 9;
+                znak = "-";
+            }
+            else if (strarr[5].ToString() == "9")
+            {
+                n1 = 10;
+                n2 = 9;
+                znak = "-";
+            }
+            else
+            {
+                throw new ArgumentNullException();
             }
 
             if (znak == "+")
@@ -60,7 +76,7 @@ namespace FancyCalc
                 return n1 - n2;
             else if (znak == "*")
             {
-                if(n1 == 0 || n2 == 0)
+                if (n1 == 0 || n2 == 0)
                 {
                     return 0;
                 }
